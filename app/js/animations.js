@@ -1,6 +1,8 @@
-var jQuery = require('jquery');
+import jQuery from 'jquery';
+import ngAnimate from 'angular-animate';
 
-var phonecatAnimations = angular.module('phonecatAnimations', ['ngAnimate']);
+
+var phonecatAnimations = angular.module('phonecatAnimations', [ngAnimate]);
 
 phonecatAnimations.animation('.phone', function() {
 

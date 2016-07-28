@@ -21,4 +21,4 @@ phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 'Ph
     };
   }]);
 
-module.exports = phonecatControllers.name;
+export default phonecatControllers.name;

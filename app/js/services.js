@@ -1,8 +1,7 @@
-'use strict';
-
+import ngResource from 'angular-resource';
 /* Services */
 
-var phonecatServices = angular.module('phonecatServices', ['ngResource']);
+var phonecatServices = angular.module('phonecatServices', [ngResource]);
 
 phonecatServices.factory('Phone', ['$resource',
   function($resource){
@@ -11,4 +10,4 @@ phonecatServices.factory('Phone', ['$resource',
     });
   }]);
 
-module.exports = phonecatServices.name;
+export default phonecatServices.name;

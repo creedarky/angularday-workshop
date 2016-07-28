@@ -1,13 +1,16 @@
-var angular = require('angular');
-var ngRoute = require('angular-route');
-require('angular-resource');
-require('angular-animate');
-require('./css/app.css');
-require('./css/animations.css');
-var phonecatAnimations = require('./js/animations');
-var phonecatControllers = require('./js/controllers');
-var phonecatFilters = require('./js/filters');
-var phonecatServices = require('./js/services');
+import angular from 'angular';
+import ngRoute from 'angular-route';
+
+//css
+import './css/app.css'
+import './css/animations.css'
+
+// modules
+
+import phonecatAnimations from './js/animations';
+import phonecatControllers from './js/controllers';
+import phonecatFilters from './js/filters';
+import phonecatServices from './js/services';
 
 'use strict';
 

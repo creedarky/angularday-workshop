@@ -20,12 +20,13 @@ module.exports = function makeWebpackConfig () {
       filename: 'bundle.js',
       path: __dirname + '/app/dist',
       pathinfo: !isProd,
+      publicPath: '/' // route used by webpack dev server to serve bundles
     },
     devtool: isProd ? 'source-map' : 'inline-source-map',
     bail: isProd, // detect any error as hard error
     module: {
       loaders: [
-        // {test: /\.js$/, loader: 'babel!eslint', exclude: /node_modules/},
+        {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
         {test: /\.css$/, loader: 'style!css'},
       ],
     },
