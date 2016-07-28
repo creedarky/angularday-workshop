@@ -39,15 +39,14 @@ module.exports = function makeWebpackConfig () {
    * Reference: http://webpack.github.io/docs/configuration.html#devserver
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
-  // config.devServer = {
-  //   contentBase: './src/public',
-  //   stats: 'minimal',
-  //   proxy: {
-  //     '/api/*': {
-  //       target: 'http://localhost:9000/'
-  //     }
-  //   }
-  // };
+  config.devServer = {
+    contentBase: './app',
+    // proxy: {
+    //   '/api/*': {
+    //     target: 'http://localhost:9000/'
+    //   }
+    // }
+  };
 
   return config;
 }();

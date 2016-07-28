@@ -16,8 +16,9 @@
   },
   "scripts": {
     "postinstall": "bower install",
-    "start": "http-server ./app -a localhost -p 8000 -c-1",
-    "build": "rimraf app/dist  && webpack"
+    "start": "npm run server",
+    "build": "rimraf app/dist  && webpack",
+    "server": "webpack-dev-server --inline --progress"
   },
   "dependencies": {
     "angular": "^1.5.8",
