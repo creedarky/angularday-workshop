@@ -18,7 +18,7 @@ module.exports = function makeWebpackConfig () {
     entry: './app/app.js',
     output: {
       filename: 'bundle.js',
-      path: __dirname + '/dist',
+      path: __dirname + '/app/dist',
       pathinfo: !isProd,
     },
     devtool: isProd ? 'source-map' : 'inline-source-map',
