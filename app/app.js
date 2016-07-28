@@ -22,6 +22,7 @@ var phonecatApp = angular.module('phonecatApp', [
 
 ]);
 
+
 phonecatApp.config(['$routeProvider',
   function($routeProvider) {
     $routeProvider.
@@ -37,3 +38,4 @@ phonecatApp.config(['$routeProvider',
         redirectTo: '/phones'
       });
   }]);
+
