@@ -50,3 +50,5 @@ phonecatAnimations.animation('.phone', function() {
     removeClass: animateDown
   };
 });
+
+module.exports = phonecatAnimations.name;

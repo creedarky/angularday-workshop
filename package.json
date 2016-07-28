@@ -17,6 +17,12 @@
   "scripts": {
     "postinstall": "bower install",
     "start": "http-server ./app -a localhost -p 8000 -c-1",
-    "build": "rimraf dist  && webpack"
+    "build": "rimraf app/dist  && webpack"
+  },
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-resource": "^1.5.8",
+    "angular-route": "^1.5.8"
   }
 }
