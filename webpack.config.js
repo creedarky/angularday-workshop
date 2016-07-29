@@ -1,4 +1,5 @@
 'use strict';
+var webpack = require('webpack');
 
 
 /**
@@ -26,15 +27,25 @@ module.exports = function makeWebpackConfig () {
     bail: isProd, // detect any error as hard error
     module: {
       loaders: [
-        {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
+        {test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /bower_components/]},
         {test: /\.css$/, loader: 'style!css'},
         {test: /\.html$/, loader: 'raw' }, //Transform to string an element
       ],
     },
+    plugins: []
   };
 
+  //support other kinds of modules
+  config.resolve = {
+    modulesDirectories: ["node_modules", "bower_components"]
+  };
 
-
+  //supports bower
+  config.plugins.push(
+    new webpack.ResolverPlugin(
+      new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
+    )
+  );
 
   /**
    * Dev server configuration
