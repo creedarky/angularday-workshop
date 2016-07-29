@@ -1,7 +1,11 @@
 
 export default class PhoneListCtrl {
   constructor(Phone) {
-    this.phones = Phone.query();
+    this.Phone = Phone;
+  }
+
+  $onInit() {
+    this.phones = this.Phone.query();
     this.orderProp = 'age';
     this.query = '';
   }
