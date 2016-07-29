@@ -41,18 +41,7 @@
   </li>
   <li>
     <span>Connectivity</span>
-    <dl>
-      <dt>Network Support</dt>
-      <dd>{{phoneDetail.phone.connectivity.cell}}</dd>
-      <dt>WiFi</dt>
-      <dd>{{phoneDetail.phone.connectivity.wifi}}</dd>
-      <dt>Bluetooth</dt>
-      <dd>{{phoneDetail.phone.connectivity.bluetooth}}</dd>
-      <dt>Infrared</dt>
-      <dd>{{phoneDetail.phone.connectivity.infrared | checkmark}}</dd>
-      <dt>GPS</dt>
-      <dd>{{phoneDetail.phone.connectivity.gps | checkmark}}</dd>
-    </dl>
+    <connectivity connectivity="phoneDetail.phone.connectivity" />
   </li>
   <li>
     <span>Android</span>

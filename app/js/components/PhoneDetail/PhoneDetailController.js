@@ -11,8 +11,6 @@ export default class PhoneDetailController {
     })
   }
 
-
-
   setImage(imageUrl) {
     this.mainImageUrl = imageUrl;
   }
