@@ -30,6 +30,8 @@ module.exports = function makeWebpackConfig () {
         {test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /bower_components/]},
         {test: /\.css$/, loader: 'style!css'},
         {test: /\.html$/, loader: 'raw' }, //Transform to string an element
+        {test: /mixin/, loader: 'imports?_=lodash'},
+        {test: /leftpad/, loaders: ['imports?window=>{}', 'exports?leftPad']}
       ],
     },
     plugins: []
