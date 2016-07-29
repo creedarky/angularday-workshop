@@ -28,6 +28,7 @@ module.exports = function makeWebpackConfig () {
       loaders: [
         {test: /\.js$/, loader: 'babel', exclude: /node_modules/},
         {test: /\.css$/, loader: 'style!css'},
+        {test: /\.html$/, loader: 'raw' }, //Transform to string an element
       ],
     },
   };

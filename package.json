@@ -12,6 +12,7 @@
     "bower": "^1.7.7",
     "css-loader": "0.23.1",
     "http-server": "^0.9.0",
+    "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
     "style-loader": "0.13.1",
     "webpack": "^1.13.1",

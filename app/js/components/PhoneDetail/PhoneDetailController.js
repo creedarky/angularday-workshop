@@ -1,7 +1,12 @@
 export default class PhoneDetailController {
 
   constructor($routeParams, Phone) {
-    this.phone = Phone.get({phoneId: $routeParams.phoneId}, (phone) => {
+    this.Phone = Phone;
+    this.phoneId = $routeParams.phoneId;
+  }
+
+  $onInit() {
+    this.phone = this.Phone.get({phoneId: this.phoneId}, (phone) => {
       this.mainImageUrl = phone.images[0];
     })
   }
