@@ -1,5 +1,3 @@
-'use strict';
-
 /* Filters */
 
 export default angular.module('phonecatFilters', []).filter('checkmark', function() {

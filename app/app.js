@@ -7,10 +7,10 @@ import './css/animations.css'
 
 // modules
 
-import phonecatAnimations from './js/animations';
-import phonecatControllers from './js/controllers';
-import phonecatFilters from './js/filters';
-import phonecatServices from './js/services';
+import animations from './js/animations';
+import controllers from './js/controllers/';
+import filters from './js/filters';
+import services from './js/services';
 
 'use strict';
 
@@ -18,11 +18,10 @@ import phonecatServices from './js/services';
 
 var phonecatApp = angular.module('phonecatApp', [
   ngRoute,
-  phonecatAnimations,
-  phonecatControllers,
-  phonecatFilters,
-  phonecatServices
-
+  animations,
+  controllers,
+  filters,
+  services
 ]);
 
 
@@ -31,11 +30,14 @@ phonecatApp.config(['$routeProvider',
     $routeProvider.
       when('/phones', {
         templateUrl: 'partials/phone-list.html',
-        controller: 'PhoneListCtrl'
+        controller: 'PhoneListCtrl',
+        controllerAs: 'phoneList'
+
       }).
       when('/phones/:phoneId', {
         templateUrl: 'partials/phone-detail.html',
-        controller: 'PhoneDetailCtrl'
+        controller: 'PhoneDetailCtrl',
+        controllerAs: 'phoneDetail'
       }).
       otherwise({
         redirectTo: '/phones'
