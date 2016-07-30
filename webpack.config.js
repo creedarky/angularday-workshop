@@ -1,6 +1,6 @@
 'use strict';
 var webpack = require('webpack');
-
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /**
  * Env
@@ -28,7 +28,7 @@ module.exports = function makeWebpackConfig () {
     module: {
       loaders: [
         {test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /bower_components/]},
-        {test: /\.css$/, loader: 'style!css'},
+        {test: /\.css$/, loader: 'style!css?sourceMap'},
         {test: /\.html$/, loader: 'raw' }, //Transform to string an element
         {test: /mixin/, loader: 'imports?_=lodash'},
         {test: /leftpad/, loaders: ['imports?window=>{}', 'exports?leftPad']}
@@ -48,6 +48,15 @@ module.exports = function makeWebpackConfig () {
       new webpack.ResolverPlugin.DirectoryDescriptionFilePlugin(".bower.json", ["main"])
     )
   );
+
+
+  config.plugins.push(
+    new HtmlWebpackPlugin({
+      template: './app/public/index.html',
+      inject: 'body'
+    })
+  );
+
 
   /**
    * Dev server configuration
