@@ -25,6 +25,12 @@ npm start
 ```
 
 
+Slides
+[Principal](https://drive.google.com/open?id=1eBPa4mWQoTLRifQ2Vy-m1Bp3MGaLU7BCGCTakqdgMvw)
+[ES6](http://slides.com/creedarky/es2015-2#/)
+
+
+
 
 ## Commits / Tutorial Outline
 
