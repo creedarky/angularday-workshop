@@ -1,6 +1,7 @@
 export default class PhoneDetailController {
 
   constructor($routeParams, Phone) {
+    "ngInject";
     this.Phone = Phone;
     this.phoneId = $routeParams.phoneId;
   }

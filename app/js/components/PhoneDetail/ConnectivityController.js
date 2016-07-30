@@ -1,6 +1,7 @@
 export default class ConnectivityController {
 
   constructor($element) {
+    "ngInject";
     this.$element = $element;
   }
 

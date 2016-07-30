@@ -29,7 +29,7 @@ module.exports = function makeWebpackConfig () {
     bail: isProd, // detect any error as hard error
     module: {
       loaders: [
-        {test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /bower_components/]},
+        {test: /\.js$/, loader: 'ng-annotate!babel', exclude: [/node_modules/, /bower_components/]},
         {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap')},
         {test: /\.html$/, loader: 'raw' }, //Transform to string an element
         {test: /mixin/, loader: 'imports?_=lodash'},
@@ -79,6 +79,9 @@ module.exports = function makeWebpackConfig () {
       new CopyWebpackPlugin([{
         from: __dirname + '/app/phones',
         to: __dirname + '/app/dist/phones'
+      }, {
+        from: __dirname + '/app/img',
+        to: __dirname + '/app/dist/img'
       }])
     )
   }

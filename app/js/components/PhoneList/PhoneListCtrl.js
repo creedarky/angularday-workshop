@@ -1,6 +1,7 @@
 
 export default class PhoneListCtrl {
   constructor(Phone) {
+    "ngInject";
     this.Phone = Phone;
   }
 
