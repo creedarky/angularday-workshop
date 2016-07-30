@@ -1,6 +1,7 @@
 'use strict';
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 /**
  * Env
@@ -28,7 +29,7 @@ module.exports = function makeWebpackConfig () {
     module: {
       loaders: [
         {test: /\.js$/, loader: 'babel', exclude: [/node_modules/, /bower_components/]},
-        {test: /\.css$/, loader: 'style!css?sourceMap'},
+        {test: /\.css$/, loader: ExtractTextPlugin.extract('style', 'css?sourceMap')},
         {test: /\.html$/, loader: 'raw' }, //Transform to string an element
         {test: /mixin/, loader: 'imports?_=lodash'},
         {test: /leftpad/, loaders: ['imports?window=>{}', 'exports?leftPad']}
@@ -54,9 +55,25 @@ module.exports = function makeWebpackConfig () {
     new HtmlWebpackPlugin({
       template: './app/public/index.html',
       inject: 'body'
-    })
+    }), new ExtractTextPlugin('[name].[hash].css', {disable: !isProd})
   );
 
+  if (isProd) {
+    config.plugins.push(
+
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#noerrorsplugin
+      // Only emit files when there are no errors
+      new webpack.NoErrorsPlugin(),
+
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#dedupeplugin
+      // Dedupe modules in the output
+      new webpack.optimize.DedupePlugin(),
+
+      // Reference: http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin
+      // Minify all javascript, switch loaders to minimizing mode
+      new webpack.optimize.UglifyJsPlugin()
+    )
+  }
 
   /**
    * Dev server configuration
